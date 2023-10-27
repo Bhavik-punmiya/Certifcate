@@ -1,7 +1,7 @@
 import cv2
 #fetch the names form firebase and store it in list_names
 #Change these line according to your need
-list_names = ["Rahul Mishra"]
+list_names = ["Rahul Mishrsa"]
 
 for index, name in enumerate(list_names):
     template = cv2.imread("DJSCE_temp.jpg")
