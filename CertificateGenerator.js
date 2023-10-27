@@ -9,8 +9,8 @@ const GenerateCertificate = async () => {
    
     const getTokenuri = await main('Bhavik Punmiya')
     console.log(getTokenuri)
-
-    await mintNFT(21, getTokenuri)
+    return getTokenuri;
+    // await mintNFT(21, getTokenuri)
 
 };
 

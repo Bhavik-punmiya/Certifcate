@@ -16,7 +16,7 @@ const contract = new ethers.Contract(contractAddress, jsonString, signer);
 console.log('***********');
 console.log(contract);
 
-async function mintNFT(tokenId, tokenUrl,gaslimit) {
+async function mintNFT(tokenId, tokenUrl) {
     try {
         const tx = await contract.mintNft(tokenId, tokenUrl);
         //await tx.wait();
@@ -26,7 +26,7 @@ async function mintNFT(tokenId, tokenUrl,gaslimit) {
     }
 }
 
-mintNFT(43, 'ipfs://QmaXkzGu4FxYt57afkVixLufidZhkG2ZWnL65q6WHR6RGN/?filename=Rena Shah.jpg.json')
+
 
 
 module.exports = mintNFT;

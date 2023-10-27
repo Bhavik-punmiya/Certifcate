@@ -33,6 +33,7 @@ const main = async (username) => {
   const imageFilePath = `img/${username}.jpg`;
   const imageFile = fs.createReadStream(imageFilePath);
   const imageIpfsHash = await uploadFileToIPFS(imageFile);
+  const fetchimage = await `https://azure-attractive-ladybug-812.mypinata.cloud/ipfs/${imageIpfsHash}?_gl=1*1joboqc*_ga*MTU5MzA4NzAxMy4xNjk1MTAwNTAw*_ga_5RMPXG14TE*MTY5ODQ0ODc5NC4xNS4wLjE2OTg0NDg3OTQuNjAuMC4w1`;
   const fileNameWithExtension = FileNameFromPath(imageFilePath);
   console.log('Image IPFS name:', fileNameWithExtension);
   
@@ -53,7 +54,7 @@ const main = async (username) => {
     // Clean up temporary metadata file
     fs.unlinkSync(metadataFilePath);
 
-    return `ipfs://${imageIpfsHash}/?filename=${fileNameWithExtension}.json`;
+    return (`ipfs://${imageIpfsHash}/?filename=${fileNameWithExtension}.json`, fetchimage);
   }
 }
 
